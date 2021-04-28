@@ -15,7 +15,7 @@ c1.content = u'<html><head></head><body><h1>Introduction</h1><p>Introduction par
 
 # about chapter
 c2 = epub.EpubHtml(title='About this book', file_name='about.xhtml', lang='en')
-c2.content = '<h1>About this book</h1><p>Hello, this is my book! There are many books, but this one is mine.</p>'
+c2.content = '<h1>About this book</h1><p>http://www.example.com<br/>http://www.example.org</p>'
 
 # add chapters to the book
 book.add_item(c1)
