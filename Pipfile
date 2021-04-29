@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 EbookLib = "*"
+readabilipy = "*"
+requests = "*"
 
 [dev-packages]
 flake8 = "*"

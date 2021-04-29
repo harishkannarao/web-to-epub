@@ -1,4 +1,10 @@
 from ebooklib import epub
+import requests
+from readabilipy import simple_json_from_html_string, simple_tree_from_html_string
+
+# req = requests.get('https://en.wikipedia.org/wiki/Readability')
+req = requests.get('https://blogs.harishkannarao.com/2021/03/reactjs-nodejs-for-java-developers.html')
+article = simple_json_from_html_string(req.text, use_readability=True)['plain_content']
 
 book = epub.EpubBook()
 
@@ -11,7 +17,7 @@ book.add_author('Sample Author')
 
 # intro chapter
 c1 = epub.EpubHtml(title='Introduction', file_name='intro.xhtml', lang='en')
-c1.content = u'<html><head></head><body><h1>Introduction</h1><p>Introduction chapter where i explain what is happening.</p></body></html>'
+c1.content = article
 
 # about chapter
 c2 = epub.EpubHtml(title='About this book', file_name='about.xhtml', lang='en')
