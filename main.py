@@ -36,8 +36,13 @@ book.add_author('Computer Program')
 chapters = []
 for num, url in enumerate(urls, start=1):
     req = requests.get(url)
-    chapter = epub.EpubHtml(title=f"Chapter {num}", file_name=f"chapter_{num}.xhtml", lang='en')
-    chapter.content = f"<h1>Chapter {num}</h1>" + simple_json_from_html_string(req.text, use_readability=True)['plain_content']
+    article = simple_json_from_html_string(req.text, use_readability=True)
+    content = f"<h1>Chapter {num}</h1>"
+    content += f"<h1>{article['title']}</h1>"
+    content += article['plain_content']
+    title = f"Chapter {num} - {article['title']}"
+    chapter = epub.EpubHtml(title=title, file_name=f"chapter_{num}.xhtml", lang='en')
+    chapter.content = content
     chapters.append(chapter)
 
 source_url_content = '<h1>Source URLs</h1>'
