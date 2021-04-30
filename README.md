@@ -1,6 +1,6 @@
-# python exercise
+# web-to-epub
 
-Repository to explore python programming, testing and bundling of python programs
+python script to convert web page(s) as epub book
 
 ## Tools Required
 
@@ -18,13 +18,13 @@ Repository to explore python programming, testing and bundling of python program
 
 ### Run python script to convert web page(s) to epub
 
-    python main.py --output-file /tmp/example.epub --input-urls <<URL 1>> <<URL 2>>
+    python main.py --output-file /tmp/example.epub --input-urls http://www.example.com http://www.example.org
 
     python main.py --output-file /tmp/example.epub --urls-file /tmp/example_urls.txt
 
 or 
 
-    python main.py -o /tmp/example.epub -i <<URL 1>> <<URL 2>>
+    python main.py -o /tmp/example.epub -i http://www.example.com http://www.example.org
 
     python main.py -o /tmp/example.epub -f /tmp/example_urls.txt
     
