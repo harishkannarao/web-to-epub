@@ -8,6 +8,7 @@ Credit goes to the authors and contributors of the following repositories:
 
 * [alan-turing-institute/ReadabiliPy](https://github.com/alan-turing-institute/ReadabiliPy)
 * [mozilla/readability](https://github.com/mozilla/readability)
+* [psf/requests](https://github.com/psf/requests)
 * [aerkalov/ebooklib](https://github.com/aerkalov/ebooklib)
 
 ## Tools Required

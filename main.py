@@ -15,7 +15,7 @@ def read_file(file_name):
 my_parser = argparse.ArgumentParser(description='Convert web page(s) as epub')
 my_parser.add_argument('--input-urls', '-i', action='store', nargs='+', type=str, required=False)
 my_parser.add_argument('--urls-file', '-f', action='store', type=str, required=False)
-my_parser.add_argument('--output-file', '-o', action='store', type=str, required=False)
+my_parser.add_argument('--output-file', '-o', action='store', type=str, required=True)
 
 args = my_parser.parse_args()
 
@@ -40,8 +40,8 @@ for num, url in enumerate(urls, start=1):
     content = f"<h1>Chapter {num}</h1>"
     content += f"<h1>{article['title']}</h1>"
     content += article['plain_content']
-    title = f"Chapter {num} - {article['title']}"
-    chapter = epub.EpubHtml(title=title, file_name=f"chapter_{num}.xhtml", lang='en')
+    title = f"{num} - {article['title']}"
+    chapter = epub.EpubHtml(title=title, file_name=f"{num}.xhtml", lang='en')
     chapter.content = content
     chapters.append(chapter)
 
